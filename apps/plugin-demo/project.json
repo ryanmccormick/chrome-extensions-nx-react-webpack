@@ -13,6 +13,11 @@
             "input": "./src",
             "glob": "manifest.json",
             "output": "."
+          },
+          {
+            "input": "./src",
+            "glob": "icon.png",
+            "output": "."
           }
         ]
       }
