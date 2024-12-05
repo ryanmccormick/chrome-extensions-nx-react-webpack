@@ -1,11 +1,9 @@
-import NxWelcome from './nx-welcome';
-
 export function App() {
   return (
-    <div>
-      <NxWelcome title="plugin-demo" />
-    </div>
+        <div>
+          <h1>Hello World!</h1>
+        </div>
   );
 }
 
-export default App;
+
