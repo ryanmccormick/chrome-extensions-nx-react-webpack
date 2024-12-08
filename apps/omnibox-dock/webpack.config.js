@@ -20,6 +20,7 @@ module.exports = {
         // { entryName: 'service-worker', entryPath: './src/service-worker.ts' },
         { entryName: 'sw-omnibox', entryPath: './src/sw-omnibox.ts' },
         { entryName: 'sw-tips', entryPath: './src/sw-tips.ts' },
+        { entryName: 'content', entryPath: './src/content.ts' },
       ],
       tsConfig: './tsconfig.app.json',
       compiler: 'babel',
