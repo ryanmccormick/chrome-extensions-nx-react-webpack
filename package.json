@@ -7,6 +7,7 @@
     "build": "nx run plugin-demo:build",
     "build:multi": "nx run multi-script:build",
     "build:tab": "nx run active-tab-inject:build",
+    "build:dock": "nx run omnibox-dock:build",
     "test": "nx run plugin-demo:test",
     "clean": "npm run clean:build && npm run clean:cache",
     "clean:build": "rm -rf ./dist",
