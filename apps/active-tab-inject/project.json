@@ -1,0 +1,31 @@
+{
+  "name": "active-tab-inject",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/active-tab-inject/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project active-tab-inject --web",
+  "targets": {
+    "build": {
+      "options": {
+        "assets": [
+          {
+            "input": "./src",
+            "glob": "focus-mode.css",
+            "output": "."
+          },
+          {
+            "input": "./src",
+            "glob": "manifest.json",
+            "output": "."
+          },
+          {
+            "input": "./src/images",
+            "glob": "*.*",
+            "output": "./images"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ dist
 tmp
 /out-tsc
 multi-bundle
+focus-mode
 
 # dependencies
 node_modules
@@ -41,3 +42,5 @@ Thumbs.db
 
 .nx/cache
 .nx/workspace-data
+
+vite.config.*.timestamp*
