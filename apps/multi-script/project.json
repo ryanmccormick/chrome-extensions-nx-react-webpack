@@ -1,0 +1,19 @@
+{
+  "name": "multi-script",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/multi-script/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/multi-script",
+        "main": "apps/multi-script/src/index.ts",
+        "tsConfig": "apps/multi-script/tsconfig.lib.json",
+        "assets": ["apps/multi-script/*.md"]
+      }
+    }
+  }
+}

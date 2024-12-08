@@ -16,6 +16,7 @@ module.exports = {
   },
   plugins: [
     new NxAppWebpackPlugin({
+      additionalEntryPoints: [{ entryName: 'content', entryPath: './src/content.ts' }],
       tsConfig: './tsconfig.app.json',
       compiler: 'babel',
       main: './src/main.tsx',

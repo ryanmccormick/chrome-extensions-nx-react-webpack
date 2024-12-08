@@ -15,9 +15,9 @@
             "output": "."
           },
           {
-            "input": "./src",
-            "glob": "icon.png",
-            "output": "."
+            "input": "./src/images",
+            "glob": "*.*",
+            "output": "./images"
           }
         ]
       }

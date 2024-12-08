@@ -4,6 +4,7 @@
 dist
 tmp
 /out-tsc
+multi-bundle
 
 # dependencies
 node_modules
