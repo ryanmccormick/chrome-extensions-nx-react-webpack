@@ -4,11 +4,13 @@
   "license": "MIT",
   "scripts": {
     "start": "nx run plugin-demo:serve",
+    "start:tab-manager": "nx run tab-manager-plugin-react:serve",
     "build": "nx run plugin-demo:build",
     "build:multi": "nx run multi-script:build",
     "build:tab": "nx run active-tab-inject:build",
     "build:dock": "nx run omnibox-dock:build",
     "build:tabs": "nx run tab-manager:build",
+    "build:tab-manager": "nx run tab-manager-plugin-react:build",
     "test": "nx run plugin-demo:test",
     "clean": "npm run clean:build && npm run clean:cache",
     "clean:build": "rm -rf ./dist",
