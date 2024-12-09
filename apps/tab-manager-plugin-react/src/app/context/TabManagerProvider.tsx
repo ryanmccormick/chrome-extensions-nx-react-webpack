@@ -1,28 +1,45 @@
-import { ReactNode, createContext, useContext, useMemo } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
 
-import { tempTabList } from './temp-tab-list.constants';
+import { getBrowserTabs } from '../utils/get-browser-tabs.util';
 
 const TabManagerContext = createContext<TabManagerProviderValue | undefined>(undefined);
 
 interface TabManagerProviderValue {
-  tabList: Array<{ title: string; pathname: string; id: number }>;
+  tabList: Array<chrome.tabs.Tab>;
+  tabIdList: Array<number>;
 }
 interface TabManagerProviderProps {
   children?: ReactNode;
 }
 
 function TabManagerProvider(props: TabManagerProviderProps) {
-  const tabList: Array<{ title: string; pathname: string; id: number }> = useMemo(() => {
-    return tempTabList.map((tab, index) => {
-      return {
-        ...tab,
-        id: index + 1,
-      };
+  const [browserTabs, setBrowserTabs] = useState<Array<chrome.tabs.Tab>>([]);
+
+  useEffect(() => {
+    getBrowserTabs().then((data) => {
+      setBrowserTabs(data);
     });
   }, []);
 
+  const tabList: Array<chrome.tabs.Tab> = useMemo(() => {
+    return browserTabs;
+  }, [browserTabs]);
+
+  const tabIdList: Array<number> = useMemo(() => {
+    return (tabList ?? [])
+      .map((tab, index) => {
+        if (!tab.id) {
+          return { ...tab, id: index + 1000 };
+        }
+
+        return tab;
+      })
+      .map((tab) => tab.id) as unknown as Array<number>;
+  }, [tabList]);
+
   const value: TabManagerProviderValue = {
     tabList,
+    tabIdList,
   };
 
   return <TabManagerContext.Provider value={value}>{props.children}</TabManagerContext.Provider>;
