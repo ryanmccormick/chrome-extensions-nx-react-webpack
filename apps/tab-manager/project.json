@@ -1,0 +1,36 @@
+{
+  "name": "tab-manager",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/tab-manager/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project tab-manager --web",
+  "targets": {
+    "build": {
+      "options": {
+        "assets": [
+          {
+            "input": "./src",
+            "glob": "popup.html",
+            "output": "."
+          },
+          {
+            "input": "./src",
+            "glob": "popup.css",
+            "output": "."
+          },
+          {
+            "input": "./src",
+            "glob": "manifest.json",
+            "output": "."
+          },
+          {
+            "input": "./src/images",
+            "glob": "*.*",
+            "output": "./images"
+          }
+        ]
+      }
+    }
+  }
+}

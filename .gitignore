@@ -6,6 +6,8 @@ tmp
 /out-tsc
 multi-bundle
 focus-mode
+omnibox-dock
+tab-manager-plugin
 
 # dependencies
 node_modules
